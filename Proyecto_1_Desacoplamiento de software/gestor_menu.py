@@ -1,5 +1,3 @@
-from datetime import date
-
 
 DIAS_SEMANA = {
     0: "lunes",
@@ -20,9 +18,6 @@ class GestorMenus:
         self._menus[dia_semana.lower()] = menu
     def menu_por_dia(self, dia):
         return self._buscar_menu(dia.lower().strip())
-    def menu_de_hoy(self):
-        dia_hoy = DIAS_SEMANA[date.today().weekday()]
-        return self._buscar_menu(dia_hoy)
     def _buscar_menu(self, dia):
         menu = self._menus.get(dia)
         if menu is None:
