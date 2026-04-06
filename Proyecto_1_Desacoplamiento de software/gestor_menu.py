@@ -10,7 +10,7 @@ DIAS_SEMANA = {
 } # Diccionario que asigna cada número (0–6) a un día de la semana.
 
 
-class GestorMenus:
+class GestorMenu:
     def __init__(self):
         self._menus = {}
 
