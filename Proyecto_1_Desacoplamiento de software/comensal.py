@@ -1,4 +1,5 @@
-DESCUENTOS = {
+
+Descuento = {
     ("estudiante", "subsidiado_alto"):0.5,
     ("estudiante", "subsidiado_medio"):0.3,
     
@@ -7,7 +8,7 @@ DESCUENTOS = {
     
     ("particular", "subsidiado_alto"):0.1,
     ("particular", "subsidiado_medio"):0.0,
-}
+} # Diccionario que asigna cada número (0–6) a un día de la semana.
 
 
 class Comensal:
@@ -18,7 +19,7 @@ class Comensal:
         self._tipo_cliente = _tipo_cliente
 
     def calcular_descuento(self, valor_plato):
-        porcentaje = DESCUENTOS.get((self._tipo_cliente, self._tipo_subsidio), 0.0)
+        porcentaje = Descuento.get((self._tipo_cliente, self._tipo_subsidio), 0.0)
         return valor_plato * porcentaje
 
     def precio_final(self, valor_plato):
