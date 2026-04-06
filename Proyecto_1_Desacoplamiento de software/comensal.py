@@ -8,7 +8,7 @@ Descuento = {
     
     ("particular", "subsidiado_alto"):0.1,
     ("particular", "subsidiado_medio"):0.0,
-} # Diccionario que asigna cada número (0–6) a un día de la semana.
+} 
 
 
 class Comensal:
