@@ -35,3 +35,24 @@ class ProcesadorVenta:
         print(f"  Descuento  : ${tiquete['descuento']:>10,.0f}")
         print(f"  TOTAL      : ${tiquete['total']:>10,.0f}")
         print("=" * 42)
+
+    def validar_pago(self, total):
+        # Punto de integración con el sistema de tesorería de la UTP
+        print(f"  [Tesorería] Pago de ${total:,.0f} aprobado.\n")
+        return True
+ 
+    def reporte_cierre(self):
+        if not self._ventas:
+            print("No hay ventas registradas.")
+            return
+ 
+        total_recaudado = sum(v["total"] for v in self._ventas)
+ 
+        print("\n" + "=" * 42)
+        print("          REPORTE DE CIERRE")
+        print("=" * 42)
+        for v in self._ventas:
+            print(f"  {v['nombre']:<22} ${v['total']:>8,.0f}")
+        print("-" * 42)
+        print(f"  {'TOTAL RECAUDADO':<22} ${total_recaudado:>8,.0f}")
+        print("=" * 42)
