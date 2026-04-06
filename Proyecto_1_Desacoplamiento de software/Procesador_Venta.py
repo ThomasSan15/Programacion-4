@@ -25,17 +25,21 @@ class ProcesadorVenta:
         return tiquete
  
     def _imprimir_tiquete(self, tiquete):
-        print("\n" + "=" * 42)
-        print("          CAFETERÍA NutriUTP")
-        print("=" * 42)
-        print(f"  Hora       : {tiquete['hora']}")
-        print(f"  cliente    : {tiquete['nombre']} ({tiquete['id_cliente']})")
-        print(f"  Plato      : {tiquete['plato']}")
-        print(f"  Precio base: ${tiquete['precio_base']:>10,.0f}")
-        print(f"  Descuento  : ${tiquete['descuento']:>10,.0f}")
-        print(f"  TOTAL      : ${tiquete['total']:>10,.0f}")
-        print("=" * 42)
+        ancho = 44
 
+        print("\n+" + "─" * ancho + "+")
+        print(f"|{'CAFETERÍA NutriUTP':^{ancho}}".ljust(ancho) + "|")
+        print("+" + "─" * ancho + "+")
+
+        print(f"| {'Hora':<12}: {tiquete['hora']:<28} |".ljust(ancho))
+        print(f"| {'Cliente':<12}: {tiquete['nombre']} ({tiquete['id_cliente']})".ljust(ancho) + " |")
+        print(f"| {'Plato':<12}: {tiquete['plato']}".ljust(ancho) + " |")
+        print(f"| {'Precio base':<12}: $ {tiquete['precio_base']:>10,.0f}".ljust(ancho) + " |")
+        print(f"| {'Descuento':<12}: $ {tiquete['descuento']:>10,.0f}".ljust(ancho) + " |")
+        print(f"| {'TOTAL':<12}: $ {tiquete['total']:>10,.0f}".ljust(ancho) + " |")
+
+        print("+" + "─" * ancho + "+")
+ 
     def validar_pago(self, total):
         # Punto de integración con el sistema de tesorería de la UTP
         print(f"  [Tesorería] Pago de ${total:,.0f} aprobado.\n")
@@ -56,3 +60,4 @@ class ProcesadorVenta:
         print("-" * 42)
         print(f"  {'TOTAL RECAUDADO':<22} ${total_recaudado:>8,.0f}")
         print("=" * 42)
+ 
