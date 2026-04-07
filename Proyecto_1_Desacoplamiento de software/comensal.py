@@ -1,14 +1,14 @@
 
 Descuento = {
-    ("estudiante", "subsidiado_alto"):0.5,
-    ("estudiante", "subsidiado_medio"):0.3,
+    ("estudiante", "subsidiado alto"):0.5,
+    ("estudiante", "subsidiado medio"):0.3,
     
-    ("administrativo","subsidiado_alto"):0.3,
-    ("administrativo","subsidiado_medio"):0.1,
+    ("administrativo","subsidiado alto"):0.3,
+    ("administrativo","subsidiado medio"):0.1,
     
-    ("particular", "subsidiado_alto"):0.1,
-    ("particular", "subsidiado_medio"):0.0,
-} 
+    ("particular", "subsidiado alto"):0.1,
+    ("particular", "subsidiado medio"):0.0,
+}
 
 
 class Comensal:
