@@ -6,30 +6,38 @@ from procesador_venta import ProcesadorVenta
 from gestor_menu import GestorMenu
 
 
-
 def configurar_menu():
     gestor = GestorMenu()
 
     lunes = MenuDia("lunes")
     lunes.agregar_plato(Plato("Pollo a la plancha con papas", 11000))
     lunes.agregar_plato(Plato("Tortilla española",             9000, es_vegetariano=True))
+    lunes.agregar_plato(Plato("Fríjoles con chicharrón",      12000))
+    lunes.agregar_plato(Plato("Ensalada César",                8500, es_vegetariano=True))
 
     martes = MenuDia("martes")
     martes.agregar_plato(Plato("Carne en bistec con arroz",   12000))
     martes.agregar_plato(Plato("Hamburguesa vegetariana",     10000, es_vegetariano=True))
+    martes.agregar_plato(Plato("Sancocho de pollo",           13000))
+    martes.agregar_plato(Plato("Ensalada de quinoa",           9000, es_vegetariano=True))
 
     miercoles = MenuDia("miercoles")
     miercoles.agregar_plato(Plato("Arroz con cerdo",          11500))
     miercoles.agregar_plato(Plato("Quinoa con verduras",       9500, es_vegetariano=True))
+    miercoles.agregar_plato(Plato("Ajiaco santafereño",       12500))
+    miercoles.agregar_plato(Plato("Arepas rellenas de queso",  8000, es_vegetariano=True))
 
     jueves = MenuDia("jueves")
     jueves.agregar_plato(Plato("Sobrebarriga al horno",       13000))
     jueves.agregar_plato(Plato("Crema de champiñones",         8500, es_vegetariano=True))
+    jueves.agregar_plato(Plato("Carne a la parrilla",         14000))
+    jueves.agregar_plato(Plato("Lasaña vegetariana",          10500, es_vegetariano=True))
 
     viernes = MenuDia("viernes")
     viernes.agregar_plato(Plato("Filete de pescado frito",    12500))
     viernes.agregar_plato(Plato("Pasta al pesto",              9000, es_vegetariano=True))
-
+    viernes.agregar_plato(Plato("Bandeja paisa mini",         11500))
+    viernes.agregar_plato(Plato("Pizza margarita",             9500, es_vegetariano=True))
 
     gestor.registrar_menu("lunes",     lunes)
     gestor.registrar_menu("martes",    martes)
