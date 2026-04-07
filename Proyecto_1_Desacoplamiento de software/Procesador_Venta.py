@@ -52,12 +52,18 @@ class ProcesadorVenta:
  
         total_recaudado = sum(v["total"] for v in self._ventas)
  
-        print("\n" + "=" * 42)
-        print("          REPORTE DE CIERRE")
-        print("=" * 42)
+        ancho = 44
+
+        print("\n+" + "─" * ancho + "+")
+        print(f"|{'REPORTE DE CIERRE':^{ancho}}|")
+        print("+" + "─" * ancho + "+")
+
         for v in self._ventas:
-            print(f"  {v['nombre']:<22} ${v['total']:>8,.0f}")
-        print("-" * 42)
-        print(f"  {'TOTAL RECAUDADO':<22} ${total_recaudado:>8,.0f}")
-        print("=" * 42)
- 
+            linea = f"{v['nombre']:<22} $ {v['total']:>10,.0f}"
+            print(f"|{linea:<{ancho}}|")
+
+        print("+" + "─" * ancho + "+")
+        total_linea = f"{'TOTAL RECAUDADO':<22} $ {total_recaudado:>10,.0f}"
+        print(f"|{total_linea:<{ancho}}|")
+        print("+" + "─" * ancho + "+")
+        
